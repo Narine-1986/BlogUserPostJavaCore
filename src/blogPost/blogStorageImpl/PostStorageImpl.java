@@ -6,8 +6,16 @@ import blogPost.models.Post;
 
 public class PostStorageImpl implements PostStorage {
 
-    private Post[] posts = new Post[10];
+    private Post[] posts;
     private int size = 0;
+
+    public PostStorageImpl(int length){
+        posts=new Post[length];
+    }
+    public PostStorageImpl(){
+        posts=new Post[16];
+    }
+
 
     public void add(Post post) {
         if (size == posts.length) {
